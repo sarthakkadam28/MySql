@@ -19,3 +19,5 @@ DELIMITER ;
 
 call customercounting();
 drop procedure customercounting;
+
+-- Error Code: 1318. Incorrect number of arguments for PROCEDURE sample.GetCustomerTotalSpending; expected 1, got 0	0.000 sec
