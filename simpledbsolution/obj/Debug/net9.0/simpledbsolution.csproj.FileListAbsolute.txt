@@ -34,3 +34,40 @@ D:\c# codes\simpledbsolution\obj\Debug\net9.0\refint\simpledbsolution.dll
 D:\c# codes\simpledbsolution\obj\Debug\net9.0\simpledbsolution.pdb
 D:\c# codes\simpledbsolution\obj\Debug\net9.0\simpledbsolution.genruntimeconfig.cache
 D:\c# codes\simpledbsolution\obj\Debug\net9.0\ref\simpledbsolution.dll
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledbsolution.csproj.AssemblyReference.cache
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledbsolution.GeneratedMSBuildEditorConfig.editorconfig
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledbsolution.AssemblyInfoInputs.cache
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledbsolution.AssemblyInfo.cs
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledbsolution.csproj.CoreCompileInputs.cache
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledbsolution.sourcelink.json
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledbsolution.dll
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\refint\simpledbsolution.dll
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledbsolution.pdb
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\simpledbsolution.exe
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\simpledbsolution.deps.json
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\simpledbsolution.runtimeconfig.json
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\simpledbsolution.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\simpledbsolution.pdb
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\Google.Protobuf.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\K4os.Compression.LZ4.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\K4os.Compression.LZ4.Streams.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\K4os.Hash.xxHash.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\MySql.Data.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\System.Diagnostics.EventLog.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\System.Security.Permissions.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\System.Windows.Extensions.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\ZstdSharp.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\runtimes\win-x64\native\comerr64.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\runtimes\win-x64\native\gssapi64.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\runtimes\win-x64\native\k5sprt64.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\runtimes\win-x64\native\krb5_64.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\runtimes\win-x64\native\krbcc64.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+D:\MySQL\MySql\simpledbsolution\bin\Debug\net9.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledb.76DFBEE2.Up2Date
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\simpledbsolution.genruntimeconfig.cache
+D:\MySQL\MySql\simpledbsolution\obj\Debug\net9.0\ref\simpledbsolution.dll
