@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MySQL\\MySql\\simpledbsolution\\simpledbsolution.csproj": {}
+    "D:\\MySQL\\simpledbsolution\\simpledbsolution.csproj": {}
   },
   "projects": {
-    "D:\\MySQL\\MySql\\simpledbsolution\\simpledbsolution.csproj": {
+    "D:\\MySQL\\simpledbsolution\\simpledbsolution.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MySQL\\MySql\\simpledbsolution\\simpledbsolution.csproj",
+        "projectUniqueName": "D:\\MySQL\\simpledbsolution\\simpledbsolution.csproj",
         "projectName": "simpledbsolution",
-        "projectPath": "D:\\MySQL\\MySql\\simpledbsolution\\simpledbsolution.csproj",
+        "projectPath": "D:\\MySQL\\simpledbsolution\\simpledbsolution.csproj",
         "packagesPath": "C:\\Users\\SARTHAK\\.nuget\\packages\\",
-        "outputPath": "D:\\MySQL\\MySql\\simpledbsolution\\obj\\",
+        "outputPath": "D:\\MySQL\\simpledbsolution\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

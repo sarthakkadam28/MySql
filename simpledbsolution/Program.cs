@@ -2,19 +2,22 @@
 using Org.BouncyCastle.Asn1.Misc;
 using System;
 using System.Data;
+using System.Formats.Asn1;
+using System.Security;
+using System.Threading.Tasks;
 
 class directconnectivity
 {
     // This is a simple C# program that connects to a MySQL database, creates a table,
-    static void Main()
+    static async Task MainAsync()
     {
         string connectionString = "Server=localhost;Port=3306;Database=sample;User=root;Password=password;";
         using (MySqlConnection connection = new MySqlConnection(connectionString))
         {
-            try
-            {
-                connection.Open();
-                Console.WriteLine("conected to MYSQL");
+            // try
+            // {
+                // connection.Open();
+                // Console.WriteLine("conected to MYSQL");
                 int choice;
                 do
                 {
@@ -32,14 +35,14 @@ class directconnectivity
                     switch (choice)
                     {
                         case 1:
-                            CreateTable(connection);
+                            await CreateTableAsync(connection);
                             break;
                         case 2:
                             Console.Write("Enter name: ");
                             string name = Console.ReadLine();
                             Console.Write("Enter email: ");
                             string email = Console.ReadLine();
-                            InsertUser(connection, name, email);
+                           await InsertUserAsync(connection, name, email);
                             break;
                         case 3:
                             Console.Write("Old Name: ");
@@ -48,17 +51,17 @@ class directconnectivity
                             string newName = Console.ReadLine();
                             Console.Write("New Email: ");
                             string newEmail = Console.ReadLine();
-                            UpdateUserEmail(connection, newName, newEmail, oldName);
+                            await UpdateUserEmailAsync(connection, newName, newEmail, oldName);
                             break;
                         case 4:
                             Console.Write("Start ID: ");
                             int startId = int.Parse(Console.ReadLine());
                             Console.Write("End ID: ");
                             int endId = int.Parse(Console.ReadLine());
-                            DeleteUser(connection, startId, endId);
+                            await DeleteUserAsync(connection, startId, endId);
                             break;
                         case 5:
-                            showUsers(connection);
+                            await showUsersAsync(connection);
                             break;
                         case 6:
                             Console.WriteLine("Exiting program.");
@@ -66,29 +69,29 @@ class directconnectivity
                     }
                 }
                 while (choice != 6);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
+            // }
+            // catch (Exception ex)
+            // {
+            //     Console.WriteLine("Error: " + ex.Message);
+            // }
+            // finally
+            // {
+            //     connection.Close();
+            // }
 
 
         }
     }
     // The following methods are used to create a table, insert a user, update a user's email, and delete a user.
-    static void CreateTable(MySqlConnection connection)
+    static async Task CreateTableAsync(MySqlConnection connection)
     {
         string createTableSql = "CREATE TABLE IF NOT EXISTS users(" + "id INT AUTO_INCREMENT PRIMARY KEY," + "name VARCHAR(255) NOT NULL," + "email VARCHAR(255) NOT NULL)";
         try
         {
-            connection.Open();
+           await connection.OpenAsync();
             using (MySqlCommand createTableCmd = new MySqlCommand(createTableSql, connection))
             {
-                createTableCmd.ExecuteNonQuery();
+               await createTableCmd.ExecuteNonQueryAsync();
             }
 
         }
@@ -98,22 +101,21 @@ class directconnectivity
         }
         finally
         {
-            connection.Close();
+            await connection.CloseAsync();
         }
     }
 
-    static void InsertUser(MySqlConnection connection, string name, string email)
+    static async Task InsertUserAsync(MySqlConnection connection, string name, string email)
     {
         string insertSql = "INSERT INTO users (name, email) VALUES (@name, @email)";
         try
         {
-            connection.Open();
+           await connection.OpenAsync();
             using (MySqlCommand insertCommand = new MySqlCommand(insertSql, connection))
             {
                 insertCommand.Parameters.AddWithValue("@name", name);
                 insertCommand.Parameters.AddWithValue("@email", email);
-
-                int rowsAffected = insertCommand.ExecuteNonQuery();
+                 int rowsAffected = await insertCommand.ExecuteNonQueryAsync();
                 Console.WriteLine($"Inserted {rowsAffected} row(s) into the users table.");
             }
 
@@ -124,25 +126,25 @@ class directconnectivity
         }
         finally
         {
-            connection.Close();
+           await connection.CloseAsync();
         }
     }
 
 
 
-    static void UpdateUserEmail(MySqlConnection connection, string name, string newEmail, string oldname)
+    static async Task UpdateUserEmailAsync(MySqlConnection connection, string name, string newEmail, string oldname)
     {
 
         string updateSql = "UPDATE users SET  name =@newname ,email = @newEmail WHERE name = @oldname";
         try
         {
-            connection.Open();
+           await connection.OpenAsync();
             using (MySqlCommand updateCommand = new MySqlCommand(updateSql, connection))
             {
                 updateCommand.Parameters.AddWithValue("@newEmail", newEmail);
                 updateCommand.Parameters.AddWithValue("@newname", name);
                 updateCommand.Parameters.AddWithValue("@oldname", oldname);
-                updateCommand.ExecuteNonQuery();
+                await updateCommand.ExecuteNonQueryAsync();
 
             }
         }
@@ -152,20 +154,20 @@ class directconnectivity
         }
         finally
         {
-            connection.Close();
+           await connection.CloseAsync();
         }
     }
-    static void DeleteUser(MySqlConnection connection, int startId, int endId)
+    static async Task DeleteUserAsync(MySqlConnection connection, int startId, int endId)
     {
         string deleteSql = "DELETE FROM users WHERE id BETWEEN @startId AND @endId";
         try
         {
-            connection.Open();
+            await connection.OpenAsync();
             using (MySqlCommand deleteCommand = new MySqlCommand(deleteSql, connection))
             {
                 deleteCommand.Parameters.AddWithValue("@startId", startId);
                 deleteCommand.Parameters.AddWithValue("@endId", endId);
-                int rowsAffected = deleteCommand.ExecuteNonQuery();
+                int rowsAffected = await deleteCommand.ExecuteNonQueryAsync();
                 Console.WriteLine($"Deleted {rowsAffected} row(s) from the users table.");
             }
         }
@@ -176,22 +178,22 @@ class directconnectivity
         }
         finally
         {
-            connection.Close();
+            await connection.CloseAsync();
         }
     }
 
-    static void showUsers(MySqlConnection connection)
+    static async Task showUsersAsync(MySqlConnection connection)
     {
         try
         {
-            connection.Open();
+            await connection.OpenAsync();
             string strCmd = "SELECT * FROM users";
             using (MySqlCommand cmd = new MySqlCommand(strCmd, connection))
             {
                 cmd.CommandType = CommandType.Text;
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                using (MySqlDataReader reader = await cmd.ExecuteReaderAsync())
                 {
-                    while (reader.Read())
+                    while (await reader.ReadAsync())
                     {
                         Console.WriteLine($"id: {reader["id"]}, name: {reader["name"]}, email: {reader["email"]}");
                     }
@@ -204,7 +206,7 @@ class directconnectivity
         }
         finally
         {
-            connection.Close();
+           await connection.CloseAsync();
         }
     }
 }
