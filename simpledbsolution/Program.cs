@@ -191,7 +191,7 @@ class directconnectivity
             using (MySqlCommand cmd = new MySqlCommand(strCmd, connection))
             {
                 cmd.CommandType = CommandType.Text;
-                using (MySqlDataReader reader = await cmd.ExecuteReaderAsync())
+                using (MySqlDataReader reader = (MySqlDataReader)await cmd.ExecuteReaderAsync())
                 {
                     while (await reader.ReadAsync())
                     {
